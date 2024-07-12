@@ -17,7 +17,23 @@ from sklearn.svm import SVC
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset = read_csv('iris.csv', names=names)
 
+'''
+# Data summary
+# Summraizes shape, head, descriptions, and class distributions
 print(dataset.shape)
 print(dataset.head(20))
 print(dataset.describe)
 print(dataset.groupby('class').size())
+'''
+
+# Data visualization
+# Univarite and multivariate plots
+
+dataset.plot(kind ='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+plt.show()
+
+dataset.hist()
+plt.show()
+
+scatter_matrix(dataset)
+plt.show()
